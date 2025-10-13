@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bai1_Lab02_23520266_PhanHongDat</string>
+    <string name="case1">Trường hợp 1</string>
+    <string name="case2">Trường hợp 2</string>
+    <string name="case3">Trường hợp 3</string>
+    <string name="case4">Trường hợp 4</string>
+    <string name="case5">Trường hợp 5</string>
+    <string name="Bai6">Bài 6</string>
+
+    <string name="input">Nhập tên: </string>
+    <string name="btnInput">NHẬP</string>
+</resources>

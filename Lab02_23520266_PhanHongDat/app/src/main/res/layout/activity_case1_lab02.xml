@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Case1_Lab02">
+<TextView
+    android:id="@+id/tv_header_case1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:text="TRƯỜNG HỢP 1"
+    android:textColor="@color/darkest_blue"
+    android:textSize="@dimen/text_large"/>
+    <TextView
+        android:id="@+id/tv_show_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_case1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin_basex4"
+        android:hint="TÊN ĐƯỢC CHỌN"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/text_medium"
+        android:background="@color/darkest_blue"
+        android:textColor="@color/white"/>
+
+    <ListView
+        android:id="@+id/lv_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
