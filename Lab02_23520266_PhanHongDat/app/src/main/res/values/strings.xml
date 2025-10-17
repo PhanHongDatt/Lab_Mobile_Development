@@ -9,4 +9,18 @@
 
     <string name="input">Nhập tên: </string>
     <string name="btnInput">NHẬP</string>
+
+    <string name="tv_quanly_nhanvien">Quản lý nhân viên</string>
+    <string name="tv_manv">Mã NV: </string>
+    <string name="tv_tennv">Tên NV: </string>
+    <string name="tv_loainv">Loại NV: </string>
+    <string name="lb_chinhthuc">Chính thức</string>
+    <string name="lb_thoivu">Thời vụ</string>
+    <string name="btn_nhap_nv">Nhập NV</string>
+
+    <string name="staff">Staff</string>
+    <string name="tv_id">ID: </string>
+    <string name="tv_fullname">Full Name: </string>
+    <string name="tv_ismanager">Is Manager: </string>
+    <string name="btn_add">ADD</string>"
 </resources>

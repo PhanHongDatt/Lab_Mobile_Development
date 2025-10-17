@@ -3,7 +3,6 @@ package com.example.bai1_lab02_23520266_phanhongdat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +39,30 @@ public class MainActivity extends AppCompatActivity {
                                         @Override
                                         public void onClick(View view) {
                                             Intent intent=new Intent(MainActivity.this,case2_lab02.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+        );
+        BtnCase3.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent=new Intent(MainActivity.this,case3_lab02.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+        );
+        BtnCase4.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent=new Intent(MainActivity.this,case4_lab02.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+        );
+        BtnCase5.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent=new Intent(MainActivity.this, case5_lab02.class);
                                             startActivity(intent);
                                         }
                                     }
