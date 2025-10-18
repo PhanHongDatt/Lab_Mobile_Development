@@ -67,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                     }
         );
+        BtnBai6.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent=new Intent(MainActivity.this, case06_lab02.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+        );
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main),
                 (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

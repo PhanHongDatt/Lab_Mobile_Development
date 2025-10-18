@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bai1_Lab02_23520266_PhanHongDat">
         <activity
+            android:name=".case06_lab02"
+            android:exported="false" />
+        <activity
             android:name=".case5_lab02"
             android:exported="false" />
         <activity

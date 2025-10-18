@@ -22,13 +22,12 @@ public class ThumbnailAdapter extends ArrayAdapter<Thumbnail> {
         super(context,0,thumbnails);
     }
 
-    // Hiển thị cho Spinner khi đóng (chỉ hiển thị tên)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         return createView(position, convertView, parent, false);
     }
 
-    // Hiển thị cho danh sách lựa chọn trong dialog (hiển thị cả hình và tên)
+    // Hiển thị cho danh sách lựa chọn
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return createView(position, convertView, parent, true);
@@ -48,7 +47,7 @@ public class ThumbnailAdapter extends ArrayAdapter<Thumbnail> {
         if (thumbnail != null) {
             textView.setText(thumbnail.getName());
             if (isDropDown) {
-                // Chỉ hiển thị hình trong danh sách dropdown
+                //hiển thị hình trong danh sách dropdown
                 imageView.setImageResource(thumbnail.getImageResID());
                 imageView.setVisibility(View.VISIBLE);
             } else {

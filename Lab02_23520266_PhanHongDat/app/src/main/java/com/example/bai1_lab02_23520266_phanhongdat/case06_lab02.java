@@ -5,41 +5,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bai1_lab02_23520266_phanhongdat.Adapters.EmployeeAdapter;
+import com.example.bai1_lab02_23520266_phanhongdat.Adapters.EmployeeRecyclerAdapter;
 import com.example.bai1_lab02_23520266_phanhongdat.models.module_employees;
 
 import java.util.ArrayList;
 
-public class case4_lab02 extends AppCompatActivity {
+public class case06_lab02 extends AppCompatActivity {
 
-    EditText etId, etName;
-    CheckBox cbIsManager;
-    Button btnAdd;
-    ListView lvEmployees;
-    ArrayList<module_employees> employeeList;
-    EmployeeAdapter adapter;
+    // Khai báo
+    private EditText etId, etName;
+    private CheckBox cbIsManager;
+    private Button btnAdd;
+    private RecyclerView rvEmployees;
+    private static ArrayList<module_employees> employeeList = new ArrayList<>();
+    private EmployeeRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_case4_lab02);
+        setContentView(R.layout.activity_case06_lab02);
 
+        // Ánh xạ
         etId = findViewById(R.id.et_manv);
         etName = findViewById(R.id.et_tennv);
         cbIsManager = findViewById(R.id.cb_ismanager);
         btnAdd = findViewById(R.id.btn_nhap);
-        lvEmployees = findViewById(R.id.lv_ds_nhanvien);
+        rvEmployees = findViewById(R.id.rv_ds_nhanvien);
 
-        employeeList = new ArrayList<>();
-        adapter = new EmployeeAdapter(this, R.layout.item_employee, employeeList);
+        // Thiết lập RecyclerView
+        rvEmployees.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new EmployeeRecyclerAdapter(this, employeeList);
+        rvEmployees.setAdapter(adapter);
 
-        lvEmployees.setAdapter(adapter);
-
+        // Sự kiện nút thêm
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,11 +62,13 @@ public class case4_lab02 extends AppCompatActivity {
             return;
         }
 
+        // Thêm nhân viên mới
         module_employees newEmployee = new module_employees(id, name, isManager);
-
         employeeList.add(newEmployee);
-        adapter.notifyDataSetChanged();
+        adapter.notifyItemInserted(employeeList.size() - 1);
+        rvEmployees.scrollToPosition(employeeList.size() - 1);
 
+        // Xóa nội dung nhập
         etId.setText("");
         etName.setText("");
         cbIsManager.setChecked(false);

@@ -23,4 +23,10 @@
     <string name="tv_fullname">Full Name: </string>
     <string name="tv_ismanager">Is Manager: </string>
     <string name="btn_add">ADD</string>"
+
+
+    <string name="name">Name: </string>
+    <string name="thumbnail">Thumbnail</string>
+    <string name="promotion">Promotion</string>
+    <string name="add">ADD A NEW DISH</string>
 </resources>

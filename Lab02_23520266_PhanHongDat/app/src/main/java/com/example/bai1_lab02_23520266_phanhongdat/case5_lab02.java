@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class case5_lab02 extends AppCompatActivity {
 
-    // 1. Khai báo các biến View và Adapter
+    // Khai báo
     EditText etDishName;
     Spinner spinnerThumbnail;
     CheckBox cbPromotion;
@@ -33,24 +33,24 @@ public class case5_lab02 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case5_lab02);
 
-        // 2. Ánh xạ View sau khi đã có layout
+        // Ánh xạ
         etDishName = findViewById(R.id.et_dish_name);
         spinnerThumbnail = findViewById(R.id.spinner_thumbnail);
         cbPromotion = findViewById(R.id.cb_promotion);
         btnAddDish = findViewById(R.id.btn_add_dish);
         gridViewDishes = findViewById(R.id.grid_view_dishes);
 
-        // --- Thiết lập cho Spinner ---
+        // Thiết lập Spinner
         Thumbnail[] thumbnails = Thumbnail.values();
         thumbnailAdapter = new ThumbnailAdapter(this, thumbnails);
         spinnerThumbnail.setAdapter(thumbnailAdapter);
 
-        // --- Thiết lập cho GridView ---
+        // Thiết lập GridView
         dishList = new ArrayList<>();
         dishAdapter = new DishAdapter(this, dishList);
         gridViewDishes.setAdapter(dishAdapter);
 
-        // --- Xử lý sự kiện nút Thêm ---
+        //Xử lý sự kiện
         btnAddDish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,6 @@ public class case5_lab02 extends AppCompatActivity {
             return;
         }
 
-        // Tạo đối tượng Dish mới (Sửa lại tên phương thức cho đúng)
         Dish newDish = new Dish(name, selectedThumbnail.getImageResID(), isPromotion);
 
         // Thêm vào danh sách và cập nhật GridView
