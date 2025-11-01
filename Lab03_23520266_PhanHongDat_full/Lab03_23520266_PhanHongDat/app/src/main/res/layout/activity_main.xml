@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23520266-Phan Hồng Đạt - Lab03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/basex4"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Managerment"
+        android:textSize="20dp"
+        android:layout_marginTop="@dimen/basex4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_student_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        app:layout_constraintTop_toBottomOf="@+id/tv_header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/basex4"
+        android:textSize="18dp"
+        android:layout_marginTop="@dimen/basex3"/>
+    <EditText
+        android:id='@+id/et_student_name'
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_student_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_student_name"/>
+    <TextView
+        android:id="@+id/tv_student_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class: "
+        app:layout_constraintTop_toBottomOf="@+id/tv_student_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/basex4"
+        android:textSize="18dp"
+        android:layout_marginTop="@dimen/basex3"/>
+    <EditText
+        android:id='@+id/et_student_class'
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_student_class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_student_class"/>
+    <TextView
+        android:id="@+id/tv_dateofbirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:textSize="18dp"
+        android:layout_marginTop="@dimen/basex4"
+        android:layout_marginLeft="@dimen/basex4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_student_class"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_dateofbirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_dateofbirth"
+        app:layout_constraintStart_toEndOf="@+id/tv_dateofbirth"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_academic_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Academic Year"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dateofbirth"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="@dimen/basex4"/>
+    <Spinner
+        android:id="@+id/sp_academic_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_academic_year"
+        app:layout_constraintTop_toTopOf="@+id/tv_academic_year"
+        android:layout_marginLeft="@dimen/basex4"/>
+
+    <TextView
+        android:id="@+id/tv_factly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sp_academic_year"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Factly"
+        android:layout_marginLeft="@dimen/basex4"
+        android:layout_marginTop="@dimen/basex4"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/sp_factly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tv_factly"
+        app:layout_constraintStart_toEndOf="@id/tv_factly"
+        android:layout_marginLeft="@dimen/basex4"/>
+    <TextView
+        android:id="@+id/tv_major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Major: "
+        app:layout_constraintTop_toBottomOf="@id/sp_factly"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/basex4"
+        android:layout_marginTop="@dimen/basex4"
+        android:textSize="18dp"/>
+    <EditText
+        android:id="@+id/et_major"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv_major"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_major"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD STUDENT"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_major"
+        android:layout_marginTop="@dimen/basex4"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        app:layout_constraintBottom_toBottomOf="@id/btn_add"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
