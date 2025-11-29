@@ -115,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
     // Zoom in
     private Animation initZoomInAnimation() {
         ScaleAnimation animation = new ScaleAnimation(
-                0.5f, 1.0f,   // scaleX: từ 50% → 100%
-                0.5f, 1.0f,   // scaleY: từ 50% → 100%
-                Animation.RELATIVE_TO_SELF, 0.5f,  // Tâm X: giữa đối tượng
-                Animation.RELATIVE_TO_SELF, 0.5f   // Tâm Y: giữa đối tượng
+                0.5f, 1.0f,
+                0.5f, 1.0f,   // từ 50 → 100
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
         );
         animation.setDuration(1000);
         animation.setFillAfter(true);
@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
     // Zoom out
     private Animation initZoomOutAnimation() {
         ScaleAnimation animation = new ScaleAnimation(
-                1.0f, 0.5f,   // scaleX: từ 100% → 50%
-                1.0f, 0.5f,   // scaleY: từ 100% → 50%
+                1.0f, 0.5f,
+                1.0f, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
@@ -250,10 +250,9 @@ private void handleClickImage(ImageView image,int aminIDIn,int aminIDOut) {
         final Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_fade_in);
 
 
-        // Set anim listener
+
         animation.setAnimationListener(animationListener);
 
-        // Handle onClickListener to start animation
 
         handleClickAnimationXml(btnFadeInXml, R.anim.anim_fade_in);
         handleClickAnimationXml(btnFadeOutXml, R.anim.anim_fade_out);
