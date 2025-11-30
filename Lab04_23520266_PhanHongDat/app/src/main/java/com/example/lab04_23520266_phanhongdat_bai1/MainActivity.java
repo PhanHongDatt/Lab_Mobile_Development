@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
     // Zoom in
     private Animation initZoomInAnimation() {
         ScaleAnimation animation = new ScaleAnimation(
-                0.5f, 1.0f,
-                0.5f, 1.0f,   // từ 50 → 100
+                0.5f, 2.0f,
+                0.5f, 2.0f,   // từ 50 → 200
                 Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
@@ -156,15 +156,15 @@ public class MainActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
         animation.setDuration(1000);
-        animation.setRepeatCount(3); // xoay 1 lần
+        animation.setRepeatCount(3);
         animation.setFillAfter(true);
         return animation;
     }
 // Move
 private Animation initMoveAnimation() {
     TranslateAnimation animation = new TranslateAnimation(
-            Animation.RELATIVE_TO_PARENT, -1.0f,  // từ ngoài bên trái
-            Animation.RELATIVE_TO_PARENT, 0.0f,   // vào giữa màn hình
+            Animation.RELATIVE_TO_PARENT, 0.0f,  // giữa màn hình
+            Animation.RELATIVE_TO_PARENT, 1.0f,   // vào qua bên phải màn hình
             Animation.RELATIVE_TO_PARENT, 0.0f,
             Animation.RELATIVE_TO_PARENT, 0.0f
     );
@@ -175,11 +175,11 @@ private Animation initMoveAnimation() {
 
 // Silde up
 private Animation initSlideUpAnimation() {
-    TranslateAnimation animation = new TranslateAnimation(
-            Animation.RELATIVE_TO_SELF, 0.0f,
-            Animation.RELATIVE_TO_SELF, 0.0f,
-            Animation.RELATIVE_TO_SELF, 1.0f,   // bắt đầu bên dưới view
-            Animation.RELATIVE_TO_SELF, 0.0f    // trượt lên vị trí ban đầu
+    ScaleAnimation animation = new ScaleAnimation(
+            1.0f, 1.0f,
+            1.0f, 0.0f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.0f
     );
     animation.setDuration(1000);
     animation.setFillAfter(true);
@@ -189,12 +189,15 @@ private Animation initSlideUpAnimation() {
 
 //Bounce
 private Animation initBounceAnimation() {
-    TranslateAnimation animation = new TranslateAnimation(
-            0, 0, 0, -100   // di chuyển lên trên 100px
+    ScaleAnimation animation = new ScaleAnimation(
+            1.0f, 1.0f,
+            0.0f, 1.0f,
+            Animation.RELATIVE_TO_SELF, 0.0f,
+            Animation.RELATIVE_TO_SELF, 0.0f
     );
     animation.setDuration(700);
     animation.setInterpolator(new android.view.animation.BounceInterpolator());
-    animation.setRepeatCount(1);
+    //animation.setRepeatCount(1);
     animation.setRepeatMode(Animation.REVERSE);
     return animation;
 }
@@ -217,7 +220,7 @@ private Animation initCombineAnimation() {
     );
     rotate.setDuration(500);
     rotate.setRepeatCount(3);
-    rotate.setRepeatMode(Animation.RELATIVE_TO_SELF);
+    rotate.setRepeatMode(Animation.RESTART);
     rotate.setInterpolator(new LinearInterpolator());
 
     AnimationSet combine = new AnimationSet(true);
