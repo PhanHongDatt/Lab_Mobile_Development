@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-permission
-        android:name="android.permission.RECEIVE_SMS"
-        />
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,6 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab05_23520266_PhanHongDat">
         <activity
+            android:name=".Bai3"
+            android:exported="false" />
+        <activity
+            android:name=".Bai2"
+            android:exported="false" />
+        <activity
+            android:name=".Bai1"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -24,8 +37,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <receiver
+            android:name=".SmsReceiver"
+            android:exported="true"> <intent-filter>
+            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+        </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
