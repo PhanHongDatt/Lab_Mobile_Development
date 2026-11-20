@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="8dp">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:text="#NT118.Q11"
+        android:textColor="#2563EB"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_customer"
+        android:text="Snow"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:text="2.000.000 VND"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:text="Paid"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_status_paid"
+        android:padding="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Detail"
+        android:textColor="#2563EB"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
